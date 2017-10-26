@@ -1,5 +1,6 @@
 package ipaynow_pay
 
+//go get github.com/ipaynowORG/ipaynow_pay_go/ipaynow_pay
 import (
 	"math/rand"
 	"time"
