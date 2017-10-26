@@ -424,7 +424,7 @@ func getPayResult(app *App, orderDetail *OrderDetail,
 	if mhtSubMchId != "" {
 		postMap["mhtSubMchId"] = mhtSubMchId
 	}
-	if orderDetail.mhtGoodsTag != "" {
+	if orderDetail.MhtGoodsTag != "" {
 		postMap["mhtGoodsTag"] = orderDetail.MhtGoodsTag
 	}
 
@@ -466,7 +466,7 @@ func getPayResult(app *App, orderDetail *OrderDetail,
 	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.AppKey))))))
 
 	postMap["mhtSignature"] = mhtSignature
-	postMap["appKey"] = app.appKey
+	postMap["appKey"] = app.AppKey
 
 	var content = ""
 	for km, vm := range postMap {
