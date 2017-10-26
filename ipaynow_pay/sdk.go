@@ -14,14 +14,14 @@ import (
 )
 
 type App struct {
-	appId  string
-	appKey string
+	AppId  string
+	AppKey string
 }
 type OrderDetail struct {
-	mhtOrderName   string
-	mhtOrderDetail string
-	mhtOrderAmt    int
-	mhtGoodsTag    string
+	MhtOrderName   string
+	MhtOrderDetail string
+	MhtOrderAmt    int
+	MhtGoodsTag    string
 }
 
 /**
@@ -161,7 +161,7 @@ func QueryOrder(mhtOrderNo string, app *App, deviceType string) string {
 	postMap["funcode"] = "MQ002"
 	postMap["version"] = "1.0.0"
 	postMap["deviceType"] = deviceType
-	postMap["appId"] = app.appId
+	postMap["appId"] = app.AppId
 	postMap["mhtOrderNo"] = mhtOrderNo
 	postMap["mhtCharset"] = "UTF-8"
 	postMap["mhtSignType"] = "MD5"
@@ -177,7 +177,7 @@ func QueryOrder(mhtOrderNo string, app *App, deviceType string) string {
 	}
 	postFormLinkReport = postFormLinkReport[0 : len(postFormLinkReport)-1]
 
-	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.appKey))))))
+	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.AppKey))))))
 
 	postMap["mhtSignature"] = mhtSignature
 
@@ -210,7 +210,7 @@ func RefundOrder(app *App, mhtOrderNo string, amount int, reason string) string 
 	var postMap = make(map[string]string)
 
 	postMap["funcode"] = "R001"
-	postMap["appId"] = app.appId
+	postMap["appId"] = app.AppId
 	postMap["mhtOrderNo"] = mhtOrderNo
 	postMap["mhtRefundNo"] = getRandomString(20)
 	postMap["amount"] = strconv.Itoa(amount)
@@ -230,7 +230,7 @@ func RefundOrder(app *App, mhtOrderNo string, amount int, reason string) string 
 	}
 	postFormLinkReport = postFormLinkReport[0 : len(postFormLinkReport)-1]
 
-	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.appKey))))))
+	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.AppKey))))))
 
 	postMap["mhtSignature"] = mhtSignature
 	postMap["signType"] = "MD5"
@@ -262,7 +262,7 @@ func RefundQuery(app *App, mhtRefundNo string) string {
 	var postMap = make(map[string]string)
 
 	postMap["funcode"] = "Q001"
-	postMap["appId"] = app.appId
+	postMap["appId"] = app.AppId
 	postMap["mhtRefundNo"] = mhtRefundNo
 	postMap["mhtCharset"] = "UTF-8"
 
@@ -277,7 +277,7 @@ func RefundQuery(app *App, mhtRefundNo string) string {
 	}
 	postFormLinkReport = postFormLinkReport[0 : len(postFormLinkReport)-1]
 
-	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.appKey))))))
+	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.AppKey))))))
 
 	postMap["mhtSignature"] = mhtSignature
 	postMap["signType"] = "MD5"
@@ -310,7 +310,7 @@ func BackOrder(app *App, mhtOrderNo string, reason string) string {
 	var postMap = make(map[string]string)
 
 	postMap["funcode"] = "R002"
-	postMap["appId"] = app.appId
+	postMap["appId"] = app.AppId
 	postMap["mhtOrderNo"] = mhtOrderNo
 	postMap["mhtRefundNo"] = getRandomString(20)
 	if reason != "" {
@@ -329,7 +329,7 @@ func BackOrder(app *App, mhtOrderNo string, reason string) string {
 	}
 	postFormLinkReport = postFormLinkReport[0 : len(postFormLinkReport)-1]
 
-	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.appKey))))))
+	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.AppKey))))))
 
 	postMap["mhtSignature"] = mhtSignature
 	postMap["signType"] = "MD5"
@@ -361,7 +361,7 @@ func BackQuery(app *App, mhtRefundNo string) string {
 	var postMap = make(map[string]string)
 
 	postMap["funcode"] = "Q002"
-	postMap["appId"] = app.appId
+	postMap["appId"] = app.AppId
 	postMap["mhtRefundNo"] = mhtRefundNo
 	postMap["mhtCharset"] = "UTF-8"
 
@@ -376,7 +376,7 @@ func BackQuery(app *App, mhtRefundNo string) string {
 	}
 	postFormLinkReport = postFormLinkReport[0 : len(postFormLinkReport)-1]
 
-	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.appKey))))))
+	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.AppKey))))))
 
 	postMap["mhtSignature"] = mhtSignature
 	postMap["signType"] = "MD5"
@@ -425,7 +425,7 @@ func getPayResult(app *App, orderDetail *OrderDetail,
 		postMap["mhtSubMchId"] = mhtSubMchId
 	}
 	if orderDetail.mhtGoodsTag != "" {
-		postMap["mhtGoodsTag"] = orderDetail.mhtGoodsTag
+		postMap["mhtGoodsTag"] = orderDetail.MhtGoodsTag
 	}
 
 	if mhtSubAppId != "" {
@@ -438,11 +438,11 @@ func getPayResult(app *App, orderDetail *OrderDetail,
 		postMap["mhtReserved"] = mhtReserved
 	}
 
-	postMap["appId"] = app.appId
+	postMap["appId"] = app.AppId
 	postMap["mhtOrderNo"] = getRandomString(13)
-	postMap["mhtOrderName"] = orderDetail.mhtOrderName
-	postMap["mhtOrderAmt"] = strconv.Itoa(orderDetail.mhtOrderAmt)
-	postMap["mhtOrderDetail"] = orderDetail.mhtOrderDetail
+	postMap["mhtOrderName"] = orderDetail.MhtOrderName
+	postMap["mhtOrderAmt"] = strconv.Itoa(orderDetail.MhtOrderAmt)
+	postMap["mhtOrderDetail"] = orderDetail.MhtOrderDetail
 	if notifyUrl != "" {
 		postMap["notifyUrl"] = notifyUrl
 	}
@@ -463,7 +463,7 @@ func getPayResult(app *App, orderDetail *OrderDetail,
 	}
 	postFormLinkReport = postFormLinkReport[0 : len(postFormLinkReport)-1]
 
-	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.appKey))))))
+	var mhtSignature = fmt.Sprintf("%x", md5.Sum([]byte(postFormLinkReport+"&"+fmt.Sprintf("%x", md5.Sum([]byte(app.AppKey))))))
 
 	postMap["mhtSignature"] = mhtSignature
 	postMap["appKey"] = app.appKey
