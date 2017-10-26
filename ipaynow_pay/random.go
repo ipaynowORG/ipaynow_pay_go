@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func getRandomString(l int) string {
+func GetRandomString(l int) string {
 	str := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	bytes := []byte(str)
 	result := []byte{}
