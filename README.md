@@ -16,7 +16,6 @@
 
 [获取源码](https://github.com/ipaynowORG/ipaynow_pay_go)
 
-[demo源码](https://github.com/ipaynowORG/ipaynow_pay_go)
 
 
 
