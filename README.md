@@ -22,8 +22,8 @@
 
 ## 2. API ##
 
-业务客户端使用SDK的相关类: cn.ipaynow.pay.sdk.PaySdk
-
+使用"go get github.com/ipaynowORG/ipaynow_pay_go/ipaynow_pay" 命令clone 并 install ipaynow_pay模块
+代码中 import (git "github.com/ipaynowORG/ipaynow_pay_go/ipaynow_pay")使用
 
 - 微信被扫支付
 
@@ -220,4 +220,32 @@
 
 ## 3. DEMO说明 ##
 
-            
+	package main
+	
+	import (
+		"fmt"
+		//使用go get github.com/ipaynowORG/ipaynow_pay_go/ipaynow_pay 命令clone 并 install ipaynow_pay模块
+		git "github.com/ipaynowORG/ipaynow_pay_go/ipaynow_pay"
+	)
+	
+	func main() {
+	
+		app := git.App{
+			AppId:  "xxxxxxxxxxxxxx",
+			AppKey: "xxxxxxxxxxxxxxxxxxxxxxxxxx",
+		}
+		orderDetail := git.OrderDetail{
+			MhtOrderName:   "测试商品",
+			MhtOrderDetail: "的描述",
+			MhtOrderAmt:    1,
+			MhtGoodsTag:    "",
+		}
+	
+		//主扫测试
+		content := git.Wx_scan_05(&app, &orderDetail, "", "https://xxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxx")
+		fmt.Println(content)
+	
+		//商户字符订单查询
+		//	resp := git.QueryOrder("xxxxxxxxxxxxxx", &app, "05")
+		//	fmt.Println(resp)
+	}            
