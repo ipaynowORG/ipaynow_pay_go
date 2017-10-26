@@ -13,16 +13,16 @@ import (
 	"time"
 )
 
-//type App struct {
-//	appId  string
-//	appKey string
-//}
-//type OrderDetail struct {
-//	mhtOrderName   string
-//	mhtOrderDetail string
-//	mhtOrderAmt    int
-//	mhtGoodsTag    string
-//}
+type App struct {
+	appId  string
+	appKey string
+}
+type OrderDetail struct {
+	mhtOrderName   string
+	mhtOrderDetail string
+	mhtOrderAmt    int
+	mhtGoodsTag    string
+}
 
 /**
  * 微信被扫支付
