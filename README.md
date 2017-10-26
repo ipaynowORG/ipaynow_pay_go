@@ -23,6 +23,7 @@
 ## 2. API ##
 
 使用"go get github.com/ipaynowORG/ipaynow_pay_go/ipaynow_pay" 命令clone 并 install ipaynow_pay模块
+
 代码中 import (git "github.com/ipaynowORG/ipaynow_pay_go/ipaynow_pay")使用
 
 - 微信被扫支付
