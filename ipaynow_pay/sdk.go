@@ -33,7 +33,7 @@ type OrderDetail struct {
  * @param notifyUr 后台通知地址
  * @param channelAuthCode 支付码
  */
-func wx_scan_05(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string, channelAuthCode string) string {
+func Wx_scan_05(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string, channelAuthCode string) string {
 	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", mhtSubAppId, "", "", notifyUrl, "", "13", -1)
 }
 
@@ -45,7 +45,7 @@ func wx_scan_05(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUr
  * @param notifyUr 后台通知地址
  * @param channelAuthCode 支付码
  */
-func ali_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string) string {
+func Ali_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string) string {
 	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "12", -1)
 }
 
@@ -57,7 +57,7 @@ func ali_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAu
  * @param mhtSubAppId 微信子号对应多个公众号的时候必填,如果只对应一个公众号则不传
  * @param notifyUrl 后台通知地址
  */
-func wx_scan_08(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string) string {
+func Wx_scan_08(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string) string {
 	//最后参数0返回图片,data:..格式 。 1 返回支付链接
 	return getPayResult(app, orderDetail, "", "", "", "05", mhtSubAppId, "", "", notifyUrl, "", "13", 0)
 }
@@ -70,7 +70,7 @@ func wx_scan_08(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUr
  * @param notifyUrl 后台通知地址
  * @param resultType PIC: tn为二维码图片(data:..格式)  URL : tn为支付链接
  */
-func ali_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string) string {
+func Ali_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string) string {
 	//最后参数0返回图片,data:..格式 。 1 返回支付链接
 	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "12", 0)
 }
@@ -83,7 +83,7 @@ func ali_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string) string {
  * @param notifyUrl 后台通知地址
  * @param frontNotifyUrl 前台页面跳转地址
  */
-func wx_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string) string {
+func Wx_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string) string {
 	//最后参数为1返回支付要素
 	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "13", 0)
 }
@@ -96,7 +96,7 @@ func wx_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNot
  * @param notifyUrl 后台通知地址
  * @param frontNotifyUrl 前台页面跳转地址
  */
-func ali_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string) string {
+func Ali_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string) string {
 	//最后参数为1返回支付要素
 	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "12", 0)
 }
@@ -110,7 +110,7 @@ func ali_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNo
  * @param notifyUrl 后台通知地址
  * @param frontNotifyUrl 前台页面跳转地址
  */
-func wx_h5(app *App, orderDetail *OrderDetail, consumerCreateIp string, notifyUrl string, frontNotifyUrl string) string {
+func Wx_h5(app *App, orderDetail *OrderDetail, consumerCreateIp string, notifyUrl string, frontNotifyUrl string) string {
 	return getPayResult(app, orderDetail, "", consumerCreateIp, "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "13", 1)
 }
 
@@ -122,7 +122,7 @@ func wx_h5(app *App, orderDetail *OrderDetail, consumerCreateIp string, notifyUr
  * @param notifyUrl 后台通知地址
  * @param frontNotifyUrl 前台页面跳转地址
  */
-func ali_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string) string {
+func Ali_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string) string {
 	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "12", 1)
 }
 
@@ -133,7 +133,7 @@ func ali_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl
  * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
  * @param notifyUrl 后台通知地址
  */
-func ali_web(app *App, orderDetail *OrderDetail, notifyUrl string) string {
+func Ali_web(app *App, orderDetail *OrderDetail, notifyUrl string) string {
 	return getPayResult(app, orderDetail, "", "", "", "04", "", "", "", notifyUrl, "", "12", 0)
 }
 
@@ -145,7 +145,7 @@ func ali_web(app *App, orderDetail *OrderDetail, notifyUrl string) string {
  * @param consumerId  用户openId
  * @param notifyUrl 后台通知地址
  */
-func wx_app(app *App, orderDetail *OrderDetail, consumerId string, notifyUrl string) string {
+func Wx_app(app *App, orderDetail *OrderDetail, consumerId string, notifyUrl string) string {
 	return getPayResult(app, orderDetail, "", "", "", "14", "", consumerId, "", notifyUrl, "", "13", 1)
 }
 
@@ -156,7 +156,7 @@ func wx_app(app *App, orderDetail *OrderDetail, consumerId string, notifyUrl str
  * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
  * @param deviceType    被扫05，主扫08，公众号传0600，h5传0601，网页04
  */
-func queryOrder(mhtOrderNo string, app *App, deviceType string) string {
+func QueryOrder(mhtOrderNo string, app *App, deviceType string) string {
 	var postMap = make(map[string]string)
 	postMap["funcode"] = "MQ002"
 	postMap["version"] = "1.0.0"
@@ -205,7 +205,7 @@ func queryOrder(mhtOrderNo string, app *App, deviceType string) string {
  * @param amount    退款金额(分)
  * @param reason    退款原因
  */
-func refundOrder(app *App, mhtOrderNo string, amount int, reason string) string {
+func RefundOrder(app *App, mhtOrderNo string, amount int, reason string) string {
 
 	var postMap = make(map[string]string)
 
@@ -257,7 +257,7 @@ func refundOrder(app *App, mhtOrderNo string, amount int, reason string) string 
  * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKeyey
  * @param mhtRefundNo   商户退款单号
  */
-func refundQuery(app *App, mhtRefundNo string) string {
+func RefundQuery(app *App, mhtRefundNo string) string {
 
 	var postMap = make(map[string]string)
 
@@ -305,7 +305,7 @@ func refundQuery(app *App, mhtRefundNo string) string {
  * @param mhtOrderNo    商户订单号
  * @param reason    退款原因
  */
-func backOrder(app *App, mhtOrderNo string, reason string) string {
+func BackOrder(app *App, mhtOrderNo string, reason string) string {
 
 	var postMap = make(map[string]string)
 
@@ -356,7 +356,7 @@ func backOrder(app *App, mhtOrderNo string, reason string) string {
  * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKeyey
  * @param mhtRefundNo   商户退款单号
  */
-func backQuery(app *App, mhtRefundNo string) string {
+func BackQuery(app *App, mhtRefundNo string) string {
 
 	var postMap = make(map[string]string)
 
