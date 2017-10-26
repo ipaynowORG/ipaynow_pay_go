@@ -1,4 +1,4 @@
-package main
+package ipaynow_pay
 
 import (
 	"fmt"
