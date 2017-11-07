@@ -41,31 +41,25 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[微信公众号支付](#2.1.11)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[微信公众号支付(获取支付要素)](#2.1.12)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[支付宝公众号支付](#2.1.12)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[支付宝公众号支付](#2.1.13)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[手Q公众号支付](#2.1.13)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[支付宝公众号支付(获取支付要素)](#2.1.14)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[微信H5](#2.1.14)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[手Q公众号支付](#2.1.15)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[支付宝H5](#2.1.15)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[手Q公众号支付(获取支付要素)](#2.1.16)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[银联H5](#2.1.16)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[微信H5](#2.1.17)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[招行一网通H5](#2.1.17)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[支付宝H5](#2.1.18)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[手Q H5](#2.1.18)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[银联H5](#2.1.19)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[支付宝网页web](#2.1.19)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[招行一网通H5](#2.1.20)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[银联网页web](#2.1.20)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[手Q H5](#2.1.21)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[支付宝网页web](#2.1.22)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[银联网页web](#2.1.23)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[微信小程序支付](#2.1.24)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[微信小程序支付](#2.1.21)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[2.2 支付结果通知](#2.2)
 
@@ -119,7 +113,7 @@
 
 <h4 id='2.1'> 2.1 聚合交易API </h4>
 
-<h5 id='2.1.1'></h4>
+<h5 id='2.1.1'></h5>
 
 - 微信被扫支付
 
@@ -135,6 +129,8 @@
 		 */
 		func Wx_scan_05(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string, channelAuthCode string, mhtOrderNo string) string
 
+<h5 id='2.1.2'></h5>
+
 - 支付宝被扫支付
 
 		/**
@@ -147,6 +143,8 @@
 		 * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
 		 */
 		func Ali_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string
+
+<h5 id='2.1.3'></h5>
 
 - 手Q被扫支付
 
@@ -161,6 +159,8 @@
 		 */
 		func Handq_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string
 
+<h5 id='2.1.4'></h5>
+
 - 京东被扫支付
 
 		/**
@@ -173,6 +173,8 @@
 		 * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
 		 */
 		func Jd_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string
+
+<h5 id='2.1.5'></h5>
 
 - 银联被扫支付
 
@@ -188,7 +190,7 @@
 		func Union_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string
 
 
-
+<h5 id='2.1.6'></h5>
 
 - 微信主扫支付
 
@@ -203,6 +205,8 @@
 		 */
 		func Wx_scan_08(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.7'></h5>
+
 
 - 支付宝主扫支付
 
@@ -216,6 +220,8 @@
 		 */
 		func Ali_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.8'></h5>
+
 - 手Q主扫支付
 
 		/**
@@ -227,6 +233,8 @@
 		 * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
 		 */
 		func Handq_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string
+
+<h5 id='2.1.9'></h5>
 
 - 京东主扫支付
 
@@ -240,6 +248,8 @@
 		 */
 		func Jd_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.10'></h5>
+
 - 银联主扫支付
 
 		/**
@@ -251,6 +261,8 @@
 		 * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
 		 */
 		func Union_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string
+
+<h5 id='2.1.11'></h5>
 
 - 微信公众号支付
 
@@ -265,7 +277,7 @@
 		 */
 		func Wx_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
 
-
+<h5 id='2.1.12'></h5>
 
 - 支付宝公众号支付
 
@@ -280,6 +292,8 @@
 		 */
 		func Ali_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.13'></h5>
+
 - 手Q公众号支付
 
 		/**
@@ -293,7 +307,7 @@
 		 */
 		func Handq_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
 
-
+<h5 id='2.1.14'></h5>
 
 - 微信H5
 
@@ -309,6 +323,8 @@
 		 */
 		func Wx_h5(app *App, orderDetail *OrderDetail, consumerCreateIp string, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.15'></h5>
+
 
 - 支付宝H5
 
@@ -322,6 +338,8 @@
 		 * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
 		 */
 		func Ali_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
+
+<h5 id='2.1.16'></h5>
 
 
 - 银联H5
@@ -337,6 +355,8 @@
 		 */
 		func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.17'></h5>
+
 - 招行一网通H5
 
 		/**
@@ -349,6 +369,8 @@
 		 * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
 		 */
 		func Cmbywt_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
+
+<h5 id='2.1.18'></h5>
 
 - 手Q H5
 
@@ -363,6 +385,8 @@
 		 */
 		func Handq_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.19'></h5>
+
 - 支付宝网页web
 
         /**
@@ -373,6 +397,8 @@
          * @param notifyUrl 后台通知地址
          */
         func ali_web(app *App, orderDetail *OrderDetail, notifyUrl string) string
+
+<h5 id='2.1.20'></h5>
 
 - 银联网页web
 
@@ -386,6 +412,8 @@
 		 */
 		func Union_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string
 
+<h5 id='2.1.21'></h5>
+
 - 微信小程序支付
 
         /**
@@ -398,7 +426,12 @@
          */
         func wx_app(app *App, orderDetail *OrderDetail, consumerId string, notifyUrl string) string
 
+<h4 id='2.2'>2.2 支付结果通知</h4>
+1212
 
+<h4 id='2.3'> 2.3 订单查询API </h4>
+
+<h5 id='2.3.1'></h4>
 
 - 商户被扫支付订单查询
 
@@ -411,6 +444,8 @@
 		 */
 		func QueryOrderScan05(mhtOrderNo string, app *App) string
 
+<h5 id='2.3.2'></h4>
+
 - 商户主扫支付订单查询
 
 		/**
@@ -421,6 +456,8 @@
 		* @return
 		 */
 		func QueryOrderScan08(mhtOrderNo string, app *App) string
+
+<h5 id='2.3.3'></h4>
 
 - 商户公众号支付订单查询
 
@@ -433,6 +470,8 @@
 		 */
 		func QueryOrderPaccount(mhtOrderNo string, app *App) string
 
+<h5 id='2.3.4'></h4>
+
 - 商户H5支付订单查询
 
 		/**
@@ -443,6 +482,8 @@
 		* @return
 		 */
 		func QueryOrderH5(mhtOrderNo string, app *App) string
+
+<h5 id='2.3.5'></h4>
 
 - 商户网页支付订单查询
 
@@ -455,6 +496,8 @@
 		 */
 		func QueryOrderWeb(mhtOrderNo string, app *App) string
 
+<h5 id='2.3.6'></h4>
+
 - 商户微信小程序支付订单查询
 
 		/**
@@ -466,6 +509,9 @@
 		 */
 		func QueryOrderWxApp(mhtOrderNo string, app *App) string
 
+<h4 id='2.4'> 2.4 退款API </h4>
+
+<h5 id='2.4.1'></h4>
 
 - 退款
 
@@ -479,6 +525,7 @@
          */
         func refundOrder(app *App, mhtOrderNo string, amount int, reason string) string
 
+<h5 id='2.4.2'></h4>
 
 - 退款查询
 
@@ -489,6 +536,8 @@
          * @param mhtRefundNo   商户退款单号
          */
         func refundQuery(app *App, mhtRefundNo string) string
+
+<h5 id='2.4.3'></h4>
 
 - 撤销
 
@@ -501,6 +550,8 @@
          */
         func backOrder(app *App, mhtOrderNo string, reason string) string
 
+<h5 id='2.4.4'></h4>
+
 - 撤销查询
 
         /**
@@ -512,7 +563,7 @@
         func backQuery(app *App, mhtRefundNo string) string 
 
 
-## 3. DEMO说明 ##
+<h2 id='3'> 3. 完整DEMO </h2>
 
 		package main
 		
