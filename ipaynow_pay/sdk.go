@@ -247,7 +247,7 @@ func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNoti
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
+func Cmbywt_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
 	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "17", 1, mhtOrderNo)
 }
 
@@ -260,7 +260,7 @@ func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNoti
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
+func Handq_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
 	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "25", 1, mhtOrderNo)
 }
 
