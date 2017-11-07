@@ -34,8 +34,8 @@ type OrderDetail struct {
  * @param channelAuthCode 支付码
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Wx_scan_05(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string, channelAuthCode string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", mhtSubAppId, "", "", notifyUrl, "", "13", -1,mhtOrderNo)
+func Wx_scan_05(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string, channelAuthCode string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", mhtSubAppId, "", "", notifyUrl, "", "13", -1, mhtOrderNo)
 }
 
 /**
@@ -47,10 +47,9 @@ func Wx_scan_05(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUr
  * @param channelAuthCode 支付码
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Ali_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "12", -1,mhtOrderNo)
+func Ali_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "12", -1, mhtOrderNo)
 }
-
 
 /**
  * 手Q被扫支付
@@ -61,10 +60,9 @@ func Ali_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAu
  * @param channelAuthCode 支付码
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Handq_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "25", -1,mhtOrderNo)
+func Handq_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "25", -1, mhtOrderNo)
 }
-
 
 /**
  * 京东被扫支付
@@ -75,10 +73,9 @@ func Handq_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channel
  * @param channelAuthCode 支付码
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Jd_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "04", -1,mhtOrderNo)
+func Jd_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "04", -1, mhtOrderNo)
 }
-
 
 /**
  * 银联被扫支付
@@ -89,12 +86,9 @@ func Jd_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAut
  * @param channelAuthCode 支付码
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Union_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "27", -1,mhtOrderNo)
+func Union_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channelAuthCode string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, channelAuthCode, "", "", "05", "", "", "", notifyUrl, "", "27", -1, mhtOrderNo)
 }
-
-
-
 
 /**
  * 微信主扫支付
@@ -107,7 +101,7 @@ func Union_scan_05(app *App, orderDetail *OrderDetail, notifyUrl string, channel
  */
 func Wx_scan_08(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUrl string, mhtOrderNo string) string {
 	//最后参数0返回图片,data:..格式 。 1 返回支付链接
-	return getPayResult(app, orderDetail, "", "", "", "05", mhtSubAppId, "", "", notifyUrl, "", "13", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "05", mhtSubAppId, "", "", notifyUrl, "", "13", 0, mhtOrderNo)
 }
 
 /**
@@ -120,10 +114,8 @@ func Wx_scan_08(app *App, orderDetail *OrderDetail, mhtSubAppId string, notifyUr
  */
 func Ali_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
 	//最后参数0返回图片,data:..格式 。 1 返回支付链接
-	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "12", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "12", 0, mhtOrderNo)
 }
-
-
 
 /**
  * 手Q主扫支付
@@ -135,10 +127,8 @@ func Ali_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderN
  */
 func Handq_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
 	//最后参数0返回图片,data:..格式 。 1 返回支付链接
-	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "25", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "25", 0, mhtOrderNo)
 }
-
-
 
 /**
  * 京东主扫支付
@@ -150,10 +140,8 @@ func Handq_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrde
  */
 func Jd_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
 	//最后参数0返回图片,data:..格式 。 1 返回支付链接
-	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "04", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "04", 0, mhtOrderNo)
 }
-
-
 
 /**
  * 银联主扫支付
@@ -165,13 +153,8 @@ func Jd_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo
  */
 func Union_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
 	//最后参数0返回图片,data:..格式 。 1 返回支付链接
-	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "27", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "05", "", "", "", notifyUrl, "", "27", 0, mhtOrderNo)
 }
-
-
-
-
-
 
 /**
  * 微信公众号支付
@@ -182,9 +165,9 @@ func Union_scan_08(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrde
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Wx_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
+func Wx_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
 	//最后参数为1返回支付要素
-	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "13", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "13", 0, mhtOrderNo)
 }
 
 /**
@@ -196,13 +179,10 @@ func Wx_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNot
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Ali_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
+func Ali_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
 	//最后参数为1返回支付要素
-	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "12", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "12", 0, mhtOrderNo)
 }
-
-
-
 
 /**
  * 手Q公众号支付
@@ -213,13 +193,10 @@ func Ali_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNo
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Handq_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
+func Handq_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
 	//最后参数为1返回支付要素
-	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "25", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "0600", "", "", "", notifyUrl, frontNotifyUrl, "25", 0, mhtOrderNo)
 }
-
-
-
 
 /**
  * 微信H5
@@ -231,8 +208,8 @@ func Handq_p_account(app *App, orderDetail *OrderDetail, notifyUrl string, front
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Wx_h5(app *App, orderDetail *OrderDetail, consumerCreateIp string, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", consumerCreateIp, "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "13", 1,mhtOrderNo)
+func Wx_h5(app *App, orderDetail *OrderDetail, consumerCreateIp string, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, "", consumerCreateIp, "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "13", 1, mhtOrderNo)
 }
 
 /**
@@ -244,11 +221,9 @@ func Wx_h5(app *App, orderDetail *OrderDetail, consumerCreateIp string, notifyUr
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Ali_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "12", 1,mhtOrderNo)
+func Ali_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "12", 1, mhtOrderNo)
 }
-
-
 
 /**
  * 银联H5
@@ -259,11 +234,9 @@ func Ali_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "20", 1,mhtOrderNo)
+func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "20", 1, mhtOrderNo)
 }
-
-
 
 /**
  * 招行一网通H5
@@ -274,10 +247,9 @@ func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNoti
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "17", 1,mhtOrderNo)
+func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "17", 1, mhtOrderNo)
 }
-
 
 /**
  * 手Q H5
@@ -288,12 +260,9 @@ func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNoti
  * @param frontNotifyUrl 前台页面跳转地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "25", 1,mhtOrderNo)
+func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNotifyUrl string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, "", "", "", "0601", "", "", "", notifyUrl, frontNotifyUrl, "25", 1, mhtOrderNo)
 }
-
-
-
 
 /**
  * 支付宝网页web
@@ -304,10 +273,8 @@ func Unionpay_h5(app *App, orderDetail *OrderDetail, notifyUrl string, frontNoti
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
 func Ali_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", "", "", "04", "", "", "", notifyUrl, "", "12", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "04", "", "", "", notifyUrl, "", "12", 0, mhtOrderNo)
 }
-
-
 
 /**
  * 银联网页web
@@ -318,11 +285,8 @@ func Ali_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo st
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
 func Ali_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", "", "", "04", "", "", "", notifyUrl, "", "20", 0,mhtOrderNo)
+	return getPayResult(app, orderDetail, "", "", "", "04", "", "", "", notifyUrl, "", "20", 0, mhtOrderNo)
 }
-
-
-
 
 /**
  * 微信小程序支付
@@ -333,12 +297,9 @@ func Ali_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo st
  * @param notifyUrl 后台通知地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Wx_app(app *App, orderDetail *OrderDetail, consumerId string, notifyUrl string,mhtOrderNo string) string {
-	return getPayResult(app, orderDetail, "", "", "", "14", "", consumerId, "", notifyUrl, "", "13", 1,mhtOrderNo)
+func Wx_app(app *App, orderDetail *OrderDetail, consumerId string, notifyUrl string, mhtOrderNo string) string {
+	return getPayResult(app, orderDetail, "", "", "", "14", "", consumerId, "", notifyUrl, "", "13", 1, mhtOrderNo)
 }
-
-
-
 
 /**
 * 商户被扫支付订单查询
@@ -346,11 +307,10 @@ func Wx_app(app *App, orderDetail *OrderDetail, consumerId string, notifyUrl str
 * @param app appId(应用ID)和appKey ,
 * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
 * @return
-*/
-func QueryOrderScan05(mhtOrderNo string, app *App){
-	return queryOrder(mhtOrderNo,app,"05");
+ */
+func QueryOrderScan05(mhtOrderNo string, app *App) string {
+	return queryOrder(mhtOrderNo, app, "05")
 }
-
 
 /**
 * 商户主扫支付订单查询
@@ -358,12 +318,10 @@ func QueryOrderScan05(mhtOrderNo string, app *App){
 * @param app appId(应用ID)和appKey ,
 * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
 * @return
-*/
-func QueryOrderScan08(mhtOrderNo string, app *App){
-	return queryOrder(mhtOrderNo,app,"08");
+ */
+func QueryOrderScan08(mhtOrderNo string, app *App) string {
+	return queryOrder(mhtOrderNo, app, "08")
 }
-
-
 
 /**
 * 商户公众号支付订单查询
@@ -371,11 +329,10 @@ func QueryOrderScan08(mhtOrderNo string, app *App){
 * @param app appId(应用ID)和appKey ,
 * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
 * @return
-*/
-func QueryOrderPaccount(mhtOrderNo string, app *App){
-	return queryOrder(mhtOrderNo,app,"0600");
+ */
+func QueryOrderPaccount(mhtOrderNo string, app *App) string {
+	return queryOrder(mhtOrderNo, app, "0600")
 }
-
 
 /**
 * 商户H5支付订单查询
@@ -383,14 +340,10 @@ func QueryOrderPaccount(mhtOrderNo string, app *App){
 * @param app appId(应用ID)和appKey ,
 * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
 * @return
-*/
-func QueryOrderH5(mhtOrderNo string, app *App){
-	return queryOrder(mhtOrderNo,app,"0601");
+ */
+func QueryOrderH5(mhtOrderNo string, app *App) string {
+	return queryOrder(mhtOrderNo, app, "0601")
 }
-
-
-
-
 
 /**
 * 商户网页支付订单查询
@@ -398,11 +351,10 @@ func QueryOrderH5(mhtOrderNo string, app *App){
 * @param app appId(应用ID)和appKey ,
 * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
 * @return
-*/
-func QueryOrderWeb(mhtOrderNo string, app *App){
-	return queryOrder(mhtOrderNo,app,"04");
+ */
+func QueryOrderWeb(mhtOrderNo string, app *App) string {
+	return queryOrder(mhtOrderNo, app, "04")
 }
-
 
 /**
 * 商户微信小程序支付订单查询
@@ -410,15 +362,10 @@ func QueryOrderWeb(mhtOrderNo string, app *App){
 * @param app appId(应用ID)和appKey ,
 * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
 * @return
-*/
-func QueryOrderWxApp(mhtOrderNo string, app *App){
-	return queryOrder(mhtOrderNo,app,"14");
+ */
+func QueryOrderWxApp(mhtOrderNo string, app *App) string {
+	return queryOrder(mhtOrderNo, app, "14")
 }
-
-
-
-
-
 
 /**
  * 商户支付订单查询
@@ -710,10 +657,10 @@ func getPayResult(app *App, orderDetail *OrderDetail,
 	}
 
 	postMap["appId"] = app.AppId
-	
+
 	if mhtOrderNo != "" {
 		postMap["mhtOrderNo"] = mhtOrderNo
-	}else{
+	} else {
 		postMap["mhtOrderNo"] = getRandomString(13)
 	}
 	postMap["mhtOrderName"] = orderDetail.MhtOrderName
