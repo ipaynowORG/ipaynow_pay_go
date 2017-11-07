@@ -284,7 +284,7 @@ func Ali_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo st
  * @param notifyUrl 后台通知地址
  * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
  */
-func Ali_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
+func Union_web(app *App, orderDetail *OrderDetail, notifyUrl string, mhtOrderNo string) string {
 	return getPayResult(app, orderDetail, "", "", "", "04", "", "", "", notifyUrl, "", "20", 0, mhtOrderNo)
 }
 
