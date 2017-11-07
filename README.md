@@ -327,6 +327,7 @@
 		func QueryOrderScan08(mhtOrderNo string, app *App) string
 
 - 商户公众号支付订单查询
+
 		/**
 		* 商户公众号支付订单查询
 		* @param mhtOrderNo    商户订单号
