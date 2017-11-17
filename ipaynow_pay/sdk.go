@@ -16,6 +16,7 @@ import (
 type App struct {
 	AppId  string
 	AppKey string
+	IsDev  bool
 }
 type OrderDetail struct {
 	MhtOrderName   string
@@ -412,7 +413,13 @@ func queryOrder(mhtOrderNo string, app *App, deviceType string) string {
 	}
 	content = content[0 : len(content)-1]
 
-	return post("https://pay.ipaynow.cn/", content)
+	var posturl = ""  
+	if app.IsDev {  
+		posturl = "https://dby.ipaynow.cn/api/payment/"  
+	} else {  
+		posturl = "https://pay.ipaynow.cn/"  
+	}  
+	return post(posturl, content)
 }
 
 /**
@@ -466,7 +473,13 @@ func RefundOrder(app *App, mhtOrderNo string, amount int, reason string) string 
 	}
 	content = content[0 : len(content)-1]
 
-	return post("https://pay.ipaynow.cn/refund/refundOrder", content)
+	var posturl = ""  
+	if app.IsDev {  
+		posturl = "https://dby.ipaynow.cn/refund_access/refundOrder"  
+	} else {  
+		posturl = "https://pay.ipaynow.cn/refund/refundOrder"  
+	}  
+	return post(posturl, content)
 }
 
 /**
@@ -513,7 +526,13 @@ func RefundQuery(app *App, mhtRefundNo string) string {
 	}
 	content = content[0 : len(content)-1]
 
-	return post("https://pay.ipaynow.cn/refund/refundQuery", content)
+	var posturl = ""  
+	if app.IsDev {  
+		posturl = "https://dby.ipaynow.cn/refund_access/refundQuery"  
+	} else {  
+		posturl = "https://pay.ipaynow.cn/refund/refundQuery"  
+	}  
+	return post(posturl, content)
 }
 
 /**
@@ -565,7 +584,13 @@ func BackOrder(app *App, mhtOrderNo string, reason string) string {
 	}
 	content = content[0 : len(content)-1]
 
-	return post("https://pay.ipaynow.cn/refund/refundOrder", content)
+	var posturl = ""  
+	if app.IsDev {  
+		posturl = "https://dby.ipaynow.cn/refund_access/refundOrder"  
+	} else {  
+		posturl = "https://pay.ipaynow.cn/refund/refundOrder"  
+	}  
+	return post(posturl, content)
 }
 
 /**
@@ -611,8 +636,13 @@ func BackQuery(app *App, mhtRefundNo string) string {
 
 	}
 	content = content[0 : len(content)-1]
-
-	return post("https://pay.ipaynow.cn/refund/refundQuery", content)
+	var posturl = ""  
+	if app.IsDev {  
+		posturl = "https://dby.ipaynow.cn/refund_access/refundQuery"  
+	} else {  
+		posturl = "https://pay.ipaynow.cn/refund/refundQuery"  
+	}  
+	return post(posturl, content)
 }
 
 func getPayResult(app *App, orderDetail *OrderDetail,
@@ -704,7 +734,13 @@ func getPayResult(app *App, orderDetail *OrderDetail,
 	}
 	content = content[0 : len(content)-1]
 
-	return post("https://pay.ipaynow.cn/", content)
+	var posturl = ""  
+	if app.IsDev {  
+		posturl = "https://dby.ipaynow.cn/api/payment/"  
+	} else {  
+		posturl = "https://pay.ipaynow.cn/"  
+	}  
+	return post(posturl, content)
 }
 
 func post(url string, postcontent string) string {
