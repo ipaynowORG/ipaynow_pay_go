@@ -6,6 +6,7 @@
 
 - 1.0.0 : 初稿
 
+- 1.0.1 : 允许客户指定调用生产或测试环境
 
 ## 目录 ##
 
@@ -725,6 +726,7 @@
 			app := git.App{
 				AppId:  "xxxxxxxx",
 				AppKey: "xxxxxxxxxxxxxxxxxxx",
+				IsDev: false,//false标识调用生产环境,true为调用测试环境
 			}
 			orderDetail := git.OrderDetail{
 				MhtOrderName:   "测试商品",
